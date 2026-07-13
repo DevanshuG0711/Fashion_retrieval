@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+
+Outputs/
+Vector_db/
+
+.DS_Store
+
+.ipynb_checkpoints/
