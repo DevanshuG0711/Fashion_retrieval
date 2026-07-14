@@ -18,7 +18,7 @@ class MetadataGenerator:
 
         image_dir = Path(image_dir)
 
-        metadata = []
+        metadata = {}
 
         with open("data/selected_images.txt") as f:
             image_paths = [
@@ -34,15 +34,14 @@ class MetadataGenerator:
 
             parsed = self.parser.parse(caption)
 
-            metadata.append({
 
-                "image_path": str(image_path),
+            metadata[str(image_path)] = {
 
                 "caption": caption,
 
                 "metadata": parsed
 
-            })
+            }
 
         with open(output_file, "w") as f:
 
