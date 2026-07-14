@@ -248,7 +248,3 @@ This project augments semantic retrieval with structured metadata extraction and
 - Support large-scale distributed indexing.
 
 ---
-
-# Author
-
-Devanshu Gupta
