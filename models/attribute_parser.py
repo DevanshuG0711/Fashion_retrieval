@@ -20,22 +20,31 @@ class AttributeParser:
     ]
 
     CLOTHING = [
+
         "shirt",
         "t-shirt",
         "tshirt",
-        "hoodie",
+        "button-down",
+        "button down",
         "blazer",
+        "hoodie",
         "jacket",
         "coat",
         "raincoat",
         "sweater",
+        "tie",
+        "dress",
+        "blouse",
         "jeans",
         "trousers",
         "pants",
         "shorts",
         "skirt",
-        "dress",
-        "tie",
+        "suit",
+        "shoes",
+        "boots",
+        "sneakers"
+
     ]
 
     SCENES = [
@@ -45,6 +54,9 @@ class AttributeParser:
         "home",
         "room",
         "city",
+        "bench",
+        "runway",
+        "building"
     ]
 
     ACTIVITIES = [
@@ -97,10 +109,67 @@ class AttributeParser:
 
         style = None
 
-        for st in self.STYLES:
-            if st in caption:
-                style = st
-                break
+        if "suit" in caption:
+
+            style = "formal"
+
+        if "tie" in caption:
+
+            style = "formal"
+
+        if "blazer" in caption:
+
+            style = "formal"
+
+        if "jeans" in caption or "hoodie" in caption:
+
+            style = "casual"
+
+        if any(word in caption for word in [
+
+            "formal",
+
+            "business",
+
+            "business attire",
+
+            "office wear",
+
+            "professional",
+
+            "blazer",
+
+            "suit",
+
+            "tie"
+
+        ]):
+
+            style = "formal"
+
+        elif any(word in caption for word in [
+
+            "casual",
+
+            "weekend",
+
+            "hoodie",
+
+            "jeans",
+
+            "t-shirt",
+
+            "tshirt",
+
+            "sneakers"
+
+        ]):
+
+            style = "casual"
+
+        elif "sport" in caption:
+
+            style = "sporty"
 
         return {
 
