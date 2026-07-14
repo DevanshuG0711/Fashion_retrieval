@@ -246,5 +246,3 @@ This project augments semantic retrieval with structured metadata extraction and
 - Incorporate weather, city, and location metadata.
 - Learn reranking weights instead of using heuristic scoring.
 - Support large-scale distributed indexing.
-
----
